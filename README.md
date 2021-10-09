@@ -141,6 +141,7 @@ print (tag)
 A tag may have any number of attributes. The tag `<b id="boldest">`  has an attribute "id" whose value is "boldest". You can access a tag’s attributes by treating the tag like a dictionary
  
 ```
+from bs4 import BeautifulSoup as BS
 tag = BS('<b id="boldest" link ="www.link.com"> bold </b>', 'html.parser').b
 print (tag['id'])
 # boldest
@@ -162,6 +163,12 @@ print (tag['id'])
 # KeyError: 'id'
 print (tag.get('id'))
 # None
+
+ 
+# class is a multi valued attribute defined by HTML4 and HTML5, thus if you want to access its value it returns a list
+soup = BS('<p class="body strikeout"></p>', 'html.parser')
+soup.p['class']
+# ['body', 'strikeout']
 ```
  
 
