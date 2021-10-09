@@ -119,7 +119,8 @@ Once upon a time there were three little sisters; and their names were
 Elsie, Lacie and Tillie; and they lived at the bottom of a well.
 
 
-### Tags 
+# Objects
+#### Tags and names 
 ```
 frm bs4 import BeautifulSoup as BS
 soup = BS('<b class="boldest">Extremely bold</b>', 'html.parser')
@@ -133,5 +134,31 @@ print (tag)
 # <a class="boldest">Extremely bold</a>
 ```
 
+### Attributes
+A tag may have any number of attributes. The tag `<b id="boldest">`  has an attribute "id" whose value is "boldest". You can access a tag’s attributes by treating the tag like a dictionary
+ 
+```
+tag = BS('<b id="boldest" link ="www.link.com"> bold </b>', 'html.parser').b
+print (tag['id'])
+# boldest
+print (tag.attrs)
+{'id': 'boldest', 'link': 'www.link.com'}
+
+
+tag['id'] = 'verybold'
+tag['link'] = "www.link.fr"
+print (tag)
+# <b id="verybold" link="www.link.fr"> bold </b>
+
+del tag['id']
+del tag['link']
+print (tag)
+# <b>bold</b>
+
+print (tag['id'])
+# KeyError: 'id'
+print (tag.get('id'))
+# None
+```
  
 
