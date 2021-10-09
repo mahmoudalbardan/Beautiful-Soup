@@ -120,7 +120,10 @@ Elsie, Lacie and Tillie; and they lived at the bottom of a well.
 
 
 # Objects
+Beautiful Soup transforms a complex HTML document into a complex tree of Python objects. But you’ll only ever have to deal with about four kinds of objects: Tag, NavigableString, BeautifulSoup, and Comment.
+
 #### Tags and names 
+A Tag object corresponds to an XML or HTML tag in the original document
 ```
 frm bs4 import BeautifulSoup as BS
 soup = BS('<b class="boldest">Extremely bold</b>', 'html.parser')
