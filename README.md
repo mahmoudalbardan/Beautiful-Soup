@@ -119,4 +119,19 @@ Once upon a time there were three little sisters; and their names were
 Elsie, Lacie and Tillie; and they lived at the bottom of a well.
 
 
+### Tags 
+```
+frm bs4 import BeautifulSoup as BS
+soup = BS('<b class="boldest">Extremely bold</b>', 'html.parser')
+tag = soup.b
+print (type(tag))
+# <class 'bs4.element.Tag'>
+print (tag.name)
+# b
+tag.name = "a" # we can chage the name 
+print (tag)
+# <a class="boldest">Extremely bold</a>
+```
+
+ 
 
