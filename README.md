@@ -171,4 +171,8 @@ soup.p['class']
 # ['body', 'strikeout']
 ```
  
+ 
+ 
+# HTML tags 
+Check this link: **https://way2tutorial.com/html/tag/index.php**
 
